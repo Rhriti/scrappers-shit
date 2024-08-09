@@ -1,0 +1,11 @@
+1.To remove extra texts that are present inside label element,
+there are 2 ways:
+    (a)either use predefined words like 'require' or 'isrequired'
+    and remove it.
+    (b)use tokenizer to find words similar to 'required' and remove it. this will cover all words simlar 
+    to required but one thing to take care is the threshold
+    (c) keep in mind position of these extra words , also special symbol like '*' often used for required field
+One more thing: when we use element.get_text() where element is an html element we get all the texts present concatenated
+So there can be a span like this <span>First Name [require]</span> or <span>First name</span> <span>required</span>.
+so we want space between field name and 'required' word.This is not possible when they are in seprate elements coz .get_text() will concat 
+the words.
